@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: kaapav-n8n-whatsapp
+    env: docker
+    repo: https://github.com/Kaapavcrm/whatsapp-webhook-n8n
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: kaapav@2024
+      - key: WEBHOOK_URL
+        value: https://kaapavwebhook.duckdns.org
+      - key: GENERIC_TIMEZONE
+        value: Asia/Kolkata
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
+      - key: NODE_ENV
+        value: production
